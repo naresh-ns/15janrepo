@@ -1,0 +1,6 @@
+
+pkg: tomcat8
+state1: present
+sr: sample.war
+des: /var/lib/tomcat8/webapps
+state2: restarted

@@ -1,0 +1,10 @@
+---
+- hosts: ubuntu
+  become: yes
+  vars_files:
+          - vars.yml
+  tasks:
+    - name: installing "{{pkg}}"
+      apt:
+        name: "{{pkg}}"
+        state: present    

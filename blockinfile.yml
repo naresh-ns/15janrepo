@@ -1,0 +1,11 @@
+---
+- hosts: all
+  tasks:
+     - name: adding block to existing file
+       blockinfile:
+               path: /home/ansible/file42
+               create: yes
+               block: |
+                       line 3
+                       line 2
+                       line 1

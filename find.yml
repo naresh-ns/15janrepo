@@ -1,0 +1,13 @@
+---
+- hosts: all
+  tasks:
+     - name: finding files
+       find:
+          path: /home/ansible/findf
+          file_type: any
+       register: out
+
+     - name: printing output of find task
+       debug:
+          msg: "{{out}}"    
+

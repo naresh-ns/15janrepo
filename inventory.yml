@@ -1,0 +1,9 @@
+---
+- hosts: redhat
+  become: yes
+  tasks:
+      - name: installing "{{pkg}}"
+        yum:
+          name: "{{pkg}}"
+          state: present
+

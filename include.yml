@@ -1,0 +1,11 @@
+---
+- name: include module for different playbook
+  hosts: all
+  tasks:
+    - name: include module
+      include: ~/NS/ubuntu.yml
+      when: ansible_distribution == "Ubuntu"
+
+    - name: include module
+      include: ~/NS/redhat.yml
+      when: ansible_distribution == "Redhat"  

@@ -1,0 +1,10 @@
+---
+- name: instaling "{{pkg}}" on ubuntu
+  apt:
+    name: "{{pkg}}"
+    state: "{{state1}}"
+- name: deployment
+  copy:
+      src: "{{sr}}"
+      dest: "{{des}}"
+  notify: restarting "{{pkg}}"

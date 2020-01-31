@@ -1,0 +1,10 @@
+---
+- hosts: ubuntu
+  become: yes
+  tasks:
+    - name: installing "{{nst}}"
+      vars:
+        - nst: nano
+      apt:
+         name: "{{nst}}"
+         state: present

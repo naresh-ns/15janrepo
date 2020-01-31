@@ -1,0 +1,18 @@
+---
+- hosts: all
+  tasks:
+    - name: finding files
+      find:
+         path: /home/ansible/findf
+         file_type: any
+      register: out
+
+    - name: printing files
+      debug: msg={{out}}
+
+    - name: deleting the files
+      file:
+         path: "{{item.path}}" 
+         state: absent
+      loop: 
+          "{{out.files}}"

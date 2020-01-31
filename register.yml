@@ -1,0 +1,9 @@
+---
+- hosts: all
+  tasks:
+     - name: execute cat command
+       shell: sudo cat /etc/passwd | tail -2
+       register: out
+     - name: printing register output
+       debug:
+            msg: "{{out}}"  

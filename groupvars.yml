@@ -1,0 +1,8 @@
+---
+- hosts: ubuntu
+  become: yes
+  tasks:
+    - name: installing "{{pkg}}"
+      apt:
+         name: "{{pkg}}"
+         state: present

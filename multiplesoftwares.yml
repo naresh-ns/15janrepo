@@ -1,0 +1,13 @@
+---
+- hosts: redhat
+  become: yes
+  tasks:
+    - name: installing multiple softwares
+      yum:
+        name : "{{item}}"
+        state: present
+      loop:
+         - curl
+         - git
+         - httpd
+         - wget

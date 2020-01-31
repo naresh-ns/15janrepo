@@ -1,0 +1,13 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+      - name: creating multiple users
+        user:
+            name: "{{item}}"
+            password: ansible
+        loop:
+           - siri
+           - jyo
+           - dhanu
+           - ajju

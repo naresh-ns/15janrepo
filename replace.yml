@@ -1,0 +1,11 @@
+---
+- hosts: all
+  tasks:
+     - name: replace multiple words
+       replace:
+             path: "{{item.path}}"
+             regexp: "{{item.regexp1}}"
+             replace: "{{item.replace1}}"
+       loop:
+         - {path: '~/file92',regexp1: 'shireesha',replace1: 'siri'}
+         - {path: '~/file92',regexp1: 'ajju',replace1: 'ajay'}

@@ -1,0 +1,23 @@
+---
+- name: giving all variables
+  hosts: ubuntu
+  become: yes
+  vars:
+      - pkg: apache2
+      - state1: present
+      - sr: index.html
+      - des: /var/www/html
+      - state2: restarted
+  tasks:
+     - name: installing "{{pkg}}"
+       apt:
+          name: "{{pkg}}"
+          state: "{{state1}}"
+     - name: deployment
+       copy:
+           src: "{{sr}}"
+           dest: "{{des}}"
+     - name: restarting
+       service:
+              name: "{{pkg}}"
+              state: "{{state2}}"

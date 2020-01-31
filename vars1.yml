@@ -1,0 +1,13 @@
+---
+ - name: installing through variables
+   hosts: ubuntu
+   become: yes
+   vars:
+      - pkg: apache2
+      - ns: present
+   tasks:
+     - name: installing "{{pkg}}"
+       apt:
+          name: "{{pkg}}"
+          state: "{{ns}}"
+

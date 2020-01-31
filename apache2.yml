@@ -1,0 +1,18 @@
+---
+ - name: installing apache2 on ubuntu
+   hosts: ubuntu
+   become: yes
+   tasks:
+     - name: installing apache2
+       apt:
+         name: apache2
+         state: present
+     - name: deployment
+       copy:
+         src: /home/ansible/index.html
+         dest: /var/www/html
+     - name: run the service
+       service:
+         name: apache2
+         state: restarted      
+   

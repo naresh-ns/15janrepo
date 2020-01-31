@@ -1,0 +1,18 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: installing packages on ubuntu
+      apt:
+        name: "{{item}}"
+        state: present
+      loop:
+          - ["git","wget","curl"]
+      when: ansible_distribution == "Ubuntu"
+    - name: installing packages on redhat
+      yum:
+         name: "{{item}}"
+         state: present
+      loop:
+         - ["git","curl","wget"]
+      when: ansible_distribution == "RedHat"

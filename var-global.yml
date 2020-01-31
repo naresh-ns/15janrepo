@@ -1,0 +1,17 @@
+---
+- hosts: all
+  vars:
+     school:
+            - VBHS
+            - CENTRAL
+     score:
+          naresh: naresh-95
+          mahesh: mahesh-90
+  tasks:  
+       - name: print school
+         debug:
+            msg: school is {{school[0]}}
+       - name: print score
+         debug:
+             msg: student  {{score.naresh}} 
+

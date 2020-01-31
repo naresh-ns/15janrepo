@@ -1,0 +1,9 @@
+---
+- hosts: all
+  tasks:
+     - name: line in file
+       lineinfile:
+               path: /home/ansible/file52
+               create: yes
+               line: hello world love devil
+

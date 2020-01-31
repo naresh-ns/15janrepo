@@ -1,0 +1,10 @@
+---
+- hosts: all
+  tasks:
+      - name: printing os distribution
+        debug:
+             msg: os distribution is {{ansible_distribution}}
+      - name: printing ip adress
+        debug:
+             msg: ipv4 adress is {{ansible_default_ipv4.address}}   
+      

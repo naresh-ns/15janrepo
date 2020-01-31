@@ -1,0 +1,7 @@
+---
+pkg: apache2
+state1: present
+sr: ~/index.html
+des: /var/www/html
+state2: restarted
+
