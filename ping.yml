@@ -1,0 +1,6 @@
+---
+ - name: ping playbook
+   hosts: all
+   tasks:
+     - name: pinging all servers
+       ping:
